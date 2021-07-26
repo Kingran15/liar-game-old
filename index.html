@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en" dir = "ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Liar Game</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="client.js"></script>
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <div id = "login">
+            <label for = "username">Enter Username:</label>
+            <br>
+            <input type = "text" id = "username" name = "username">
+            <br>
+            <input class = "input-button" type = "button" value = "Submit" onclick = "sendUsername()">
+
+        </div>
+
+        <div id = "lobby" style="display: none;">
+            <p id = "waiting-text">Waiting for players...</p>
+            <label for = "numPlayers">Current number of players: </label>
+            <p id = "numPlayers" name = "numPlayers"></p>
+
+            <div class = "host" id = "lobby-host" style = "display: none;">
+                <label for = "startGame">You are the current host.</label>
+                <br>
+                <input class = "input-button" type = "button" id = "startGame" name = "startGame" value = "Start Game" onclick = "startGame()">
+            </div>
+        </div>
+
+        <div id = "waitlist" style="display: none;">
+            <p id = "waitlist-notification">As a game is currently in progress, you are currently in the waitlist.
+            You will be automatically added to the game in the next round.</p>
+        </div>
+
+        <div id = "game" style="display: none;">
+            <h1 id = "word"></h1>
+
+            <div class = "host" id = "game-host" style = "display: none;">
+                <label for = "resetGame">You are the current host.</label>
+                <br>
+                <input class="input-button" type = "button" id = "resetGame" name = "resetGame" value = "Start New Game" onclick = "startGame()">
+            </div>
+        </div>
+    </body>
+
+</html>
